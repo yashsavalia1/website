@@ -1,0 +1,51 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import Navbar from "../components/Navbar.astro";
+
+const theme = Astro.cookies.get("theme").value;
+---
+
+<!DOCTYPE html>
+<html lang="en" class={theme}>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      @keyframes move-twink-back {
+        from {
+          background-position: 0 0;
+        }
+        to {
+          background-position: -10000px 5000px;
+        }
+      }
+      .stars,
+      .twinkling {
+        @apply absolute w-full h-full;
+      }
+
+      .stars {
+        background: #000 url("/stars.png") repeat top center;
+        z-index: -10;
+      }
+
+      .twinkling {
+        background: transparent url("/twinkling.png") repeat top center;
+        z-index: -5;
+        animation: move-twink-back 200s linear infinite;
+      }
+    </style>
+  </head>
+  <body class="dark:bg-black transition-colors">
+    <div id="page-container" class="min-h-screen relative">
+      <div class="stars"></div>
+      <div class="twinkling"></div>
+      <Navbar />
+      <main class="p-3 md:pb-20 pb-40 text-white">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>

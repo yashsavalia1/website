@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'Nunito';
+    /*a name to be used later*/
+    src: url("../../Fonts/Nunito-Bold.ttf");
+    /*URL to font*/
+}
+
+@font-face {
+    font-family: 'A';
+    /*a name to be used later*/
+    src: url("../../Fonts/Alkhemikal.ttf");
+    /*URL to font*/
+}
+
+body {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.button {
+    transition: 0.25s;
+    font-size: 20pt;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(0, 255, 0);
+    border-radius: 25px;
+    padding-inline: 20px;
+    padding-block: 5px;
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+}
+
+.button:hover {
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 1);
+    -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 5px 5px 15px rgba(0, 0, 0, 1);
+}
+
+p {
+    background-color: aliceblue;
+    border-radius: 15px;
+    padding-inline: 20px;
+}
+
+.font {
+    font-family: 'A';
+}
+
+.text {
+    font-size: 28pt;
+}
+
+#title {
+    font-family: 'A';
+    font-size: 70pt;
+}

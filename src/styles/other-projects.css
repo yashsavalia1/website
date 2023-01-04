@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "Nunito";
+  /*a name to be used later*/
+  src: url("/fonts/Nunito-Bold.ttf");
+  /*URL to font*/
+}
+
+#link-holder {
+  white-space: nowrap;
+  margin-block: 50px;
+}
+
+#link-holder a {
+  border-radius: 25px;
+  background-color: rgb(54, 197, 102);
+  color: white;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  font-size: large;
+}
+
+#answer {
+  display: flex;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-weight: lighter;
+  @apply text-3xl
+}
