@@ -12,9 +12,12 @@ import node from "@astrojs/node";
 export default defineConfig({
   site: 'https://yashsavalia1.github.io',
   base: '/website',
-  integrations: [mdx(), sitemap(), tailwind()],
+  integrations: [mdx(), sitemap({
+    customPages: ['https://yashsavalia1.github.io/website']
+  }), tailwind()],
   output: "server",
   adapter: node({
     mode: "standalone"
-  })
+  }),
+  
 });
