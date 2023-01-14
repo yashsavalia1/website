@@ -2,40 +2,60 @@
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<head>
-  <style>
-    .typing {
-      overflow: hidden;
-      border-right: 3px solid;
-      font-family: Space Mono, monospace;
-      animation: blink 1s infinite normal;
-      width: min(32.25rem, 100%);
-    }
-    @media (min-width: 768px) {
-      .typing {
-        width: 32.25rem;
-        white-space: nowrap;
-        animation: typing 2s steps(28), blink 1s infinite normal;
-      }
-    }
-    @keyframes typing {
-      from {
-        width: 0;
-      }
-    }
-    @keyframes blink {
-      from {
-        border-right-color: rgba(255, 255, 255, 0.75);
-      }
-      to {
-        border-right-color: transparent;
-      }
-    }
-  </style>
-</head>
 <MainLayout>
-  <h1 class="typing text-3xl font-bold flex">Hi! My name is Yash Savalia.</h1>
+  <h1 class="typing text-3xl font-bold flex dark:text-white text-black">
+    Hi! My name is Yash Savalia.
+  </h1>
+
+  <p class="text-lg dark:text-gray-300 text-gray-700">
+    I'm a physics major at the University of Illinois Urbana-Champagin
+  </p>
 </MainLayout>
+
+<style is:global>
+  .typing {
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: Space Mono, monospace;
+    animation: blink 1s infinite normal;
+    width: min(32.25rem, 100%);
+  }
+  .dark .typing {
+    animation: dark-blink 1s infinite normal;
+  }
+  @media (min-width: 768px) {
+    .typing {
+      width: 32.25rem;
+      white-space: nowrap;
+      animation: typing 2s steps(28), blink 1s infinite normal;
+    }
+
+    .dark .typing {
+      animation: typing 2s steps(28), dark-blink 1s infinite normal;
+    }
+  }
+  @keyframes blink {
+    from {
+      border-right-color: rgba(0, 0, 0, 0.75);
+    }
+    to {
+      border-right-color: transparent;
+    }
+  }
+  @keyframes dark-blink {
+    from {
+      border-right-color: rgba(255, 255, 255, 0.75);
+    }
+    to {
+      border-right-color: transparent;
+    }
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+  }
+</style>
 
 {
   /* <p>

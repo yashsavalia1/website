@@ -10,14 +10,14 @@
   margin-block: 50px;
 }
 
-#link-holder a {
+/* #link-holder a {
   border-radius: 25px;
   background-color: rgb(54, 197, 102);
   color: white;
   padding: 0.5em 1em;
   text-decoration: none;
   font-size: large;
-}
+} */
 
 #answer {
   display: flex;

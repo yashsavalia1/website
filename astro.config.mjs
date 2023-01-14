@@ -6,18 +6,9 @@ import sitemap from '@astrojs/sitemap';
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
-import node from "@astrojs/node";
-
-// https://astro.build/config
 export default defineConfig({
   site: 'https://yashsavalia1.github.io',
-  base: '/website',
-  integrations: [mdx(), sitemap({
-    customPages: ['https://yashsavalia1.github.io/website']
-  }), tailwind()],
-  output: "server",
-  adapter: node({
-    mode: "standalone"
-  }),
-  
+  base: '',
+  integrations: [mdx(), sitemap(), tailwind()],
+  output: "static"
 });

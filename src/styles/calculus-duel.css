@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "Alkhemikal";
+  src: url("../../fonts/Alkhemikal.ttf");
+}
+
+.font {
+  font-family: "Alkhemikal";
+}
+
+.text {
+  @apply text-4xl leading-relaxed;
+}
+
+.button {
+  @apply text-3xl leading-normal inline-block px-5 my-4 
+  rounded-3xl bg-[lime] transition-shadow duration-300;
+}
+
+.button:hover {
+  @apply shadow-2xl;
+}
+
+p {
+  @apply bg-slate-100 rounded-2xl px-5;
+}

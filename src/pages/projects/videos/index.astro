@@ -1,0 +1,46 @@
+---
+import MainLayout from "../../../layouts/MainLayout.astro";
+import "./videos.css";
+---
+
+<MainLayout>
+  <div class="videos flex flex-col max-w-xl ml-auto mr-auto">
+    <h1 class="text-3xl">Videos:</h1>
+    <div class="relative w-full pt-[56.25%] overflow-hidden">
+      <iframe
+        class="responsive-iframe"
+        src="https://www.youtube.com/embed/SF_NQhsB0wI"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+    <div class="relative w-full pt-[56.25%] overflow-hidden">
+      <iframe
+        class="absolute top-0 left-0 right-0 bottom-0 w-full h-full border-none"
+        src="https://drive.google.com/file/d/1TrQZiyIkDk3lhHc40DOb8q-Pz4eQzr51/preview"
+        allow="autoplay"></iframe>
+    </div>
+    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/baKjShsPgss" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+  </div>
+</MainLayout>
+
+<style>
+  .container {
+    /* position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 56.25%; 16:9 Aspect Ratio */
+    @apply relative w-full pt-[56.25%] overflow-hidden;
+  }
+
+  .responsive-iframe {
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none; */
+    @apply absolute top-0 left-0 right-0 bottom-0 w-full h-full border-none;
+  }
+</style>

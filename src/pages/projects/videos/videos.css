@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "Nunito";
+  /*a name to be used later*/
+  src: url("../../Fonts/Nunito-Bold.ttf");
+  /*URL to font*/
+}
+
+.videos iframe {
+  @apply ml-auto mr-auto my-10;
+}

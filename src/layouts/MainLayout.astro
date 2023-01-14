@@ -4,11 +4,10 @@ import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 import Navbar from "../components/Navbar.astro";
 
-const theme = Astro.cookies.get("theme").value;
 ---
 
 <!DOCTYPE html>
-<html lang="en" class={theme}>
+<html lang="en" class="dark font-[Anybody]">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     <style>
@@ -20,17 +19,17 @@ const theme = Astro.cookies.get("theme").value;
           background-position: -10000px 5000px;
         }
       }
-      .stars,
-      .twinkling {
+      .dark .stars,
+      .dar .twinkling {
         @apply absolute w-full h-full;
       }
 
-      .stars {
+      .dark .stars {
         background: #000 url("/stars.png") repeat top center;
         z-index: -10;
       }
 
-      .twinkling {
+      .dark .twinkling {
         background: transparent url("/twinkling.png") repeat top center;
         z-index: -5;
         animation: move-twink-back 200s linear infinite;
@@ -49,3 +48,8 @@ const theme = Astro.cookies.get("theme").value;
     </div>
   </body>
 </html>
+
+<script>
+  import { setTheme } from "../scripts/dark";
+  setTheme();
+</script>

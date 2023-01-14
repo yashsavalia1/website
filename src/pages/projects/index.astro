@@ -1,0 +1,42 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import ProjectCard from "../../layouts/ProjectCard.astro";
+import "../../styles/other-projects.css";
+import mathAltCodeConverter from "./math-alt-code-converter.png";
+---
+
+<head>
+  <link rel="shortcut icon" href="../favicon.ico?" type="image/x-icon" />
+</head>
+<MainLayout>
+  <h1>View other projects:</h1>
+  <div class="flex flex-wrap gap-5 lg:justify-start justify-center">
+    <!-- <a id="snake" href="./snake/">Snake</a> -->
+    <ProjectCard
+      url="projects/math-alt-code-converter/"
+      title="Text to Unicode Math Converter"
+      description={`A simple text converter which converter typable text to unicode math symbols. 
+      Good for pasting in Discord, Slack, or other chat apps.`}
+      image={mathAltCodeConverter}
+    />
+
+    <ProjectCard
+      url="projects/videos/"
+      title="My Video Work"
+      description={`Random videos I've made over the years.`}
+    />
+
+    <ProjectCard
+      url="/Cereal-Installer.zip"
+      title="CerealLang Download"
+      description={`An interpreted programming language I made in Java. Click the link to download the installer.`}
+      download
+    />
+    <ProjectCard
+      url="projects/calculus-duel/"
+      title="Calculus Duel"
+      description={`This game tests your Calculus knowledge in fun duels while playing as historic mathematicians. 
+      It was my final project for my Calculus class.`}
+    />
+  </div>
+</MainLayout>

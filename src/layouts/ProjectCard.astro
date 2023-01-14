@@ -1,0 +1,55 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+export interface Props extends HTMLAttributes<"a"> {
+  url: string;
+  image?: string;
+  title: string;
+  description: string;
+  download?: boolean;
+}
+
+const {
+  url,
+  image,
+  title,
+  description,
+  download = false,
+  ...props
+} = Astro.props;
+
+if (download) {
+  props.download = true;
+}
+---
+
+{
+  download ? (
+    <div class="project-card">
+      <a href={url} class="w-full" download>
+        {image && <img class="w-full" src={image} alt={image} />}
+        <div class="px-6 py-4 ">
+          <div class="text-black font-bold text-xl mb-2">{title}</div>
+          <p class="text-gray-700">{description}</p>
+        </div>
+      </a>
+    </div>
+  ) : (
+    <div class="project-card">
+      <a href={url} class="w-full">
+        {image && <img class="w-full" src={image} alt={image} />}
+        <div class="px-6 py-4">
+          <div class="text-black font-bold text-xl mb-2">{title}</div>
+          <p class="text-gray-700">{description}</p>
+        </div>
+      </a>
+    </div>
+  )
+}
+
+<style>
+  .project-card {
+    @apply flex max-w-sm w-[min(24rem,100%)] rounded overflow-hidden opacity-90 bg-white 
+    whitespace-normal transition-all duration-200 hover:shadow-white hover:shadow-lg border-4 border-gray-400 hover:scale-105;
+  }
+</style>
