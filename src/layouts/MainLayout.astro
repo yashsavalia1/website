@@ -45,26 +45,5 @@ import Navbar from "../components/Navbar.astro";
       </main>
       <Footer />
     </div>
-    <script>
-      const getTheme = () => {
-        const userTheme = localStorage.getItem("theme");
-        const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-          .matches
-          ? "dark"
-          : "light";
-        return userTheme || systemTheme;
-      };
-
-      if (getTheme() === "dark") {
-        document.documentElement.classList.add("dark");
-        document.documentElement.classList.remove("light");
-      } else {
-        document.documentElement.classList.remove("dark");
-        document.documentElement.classList.add("light");
-      }
-    </script>
-  </body><!-- <script type="module">
-  import { setTheme } from "../scripts/dark";
-  setTheme();
-</script> -->
+  </body>
 </html>
