@@ -1,0 +1,19 @@
+index.html
+  s_832c7c4f88c26b::t_a91779bb36144d 23-24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ef29c722f8b20709b77e13a1657bbdfaf0a78eee",
+  "prompts": {},
+  "sessions": {
+    "s_832c7c4f88c26b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "21f4c2f6-10d6-4e4c-b89a-09d2767a63b3",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Yash Savalia <yashsavalia1@gmail.com>"
+    }
+  }
+}
