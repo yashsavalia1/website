@@ -1,0 +1,46 @@
+README.md
+  s_b1c41f53bb1c24::t_b4bb96d51e30ed 1,3,5
+index.html
+  s_b1c41f53bb1c24::t_6fc97bce2d24a1 64
+  s_b1c41f53bb1c24::t_970447a598ba0b 93-96,100
+  s_832c7c4f88c26b::t_0f8d2ac935b21c 241
+  s_b1c41f53bb1c24::t_a90e80287e655a 14,19,26-28,30,36,39-40,51,58-59,61-63,66-67,69-71,74-75,77,79-80,88,90-91,98,112-116,133,149-150,161,171,242
+  s_832c7c4f88c26b::t_4f11f84ca4ecb1 53-54,56-57,127,172-173,176-177,179,181-182,186-189,191-196,200-214,216-221,225-238
+  s_b1c41f53bb1c24::t_7fee0727b0acad 1-6,8,10-13,15-18,20-25,29,31,33-35,37-38,41-45,68,72-73,76,78,82-83,85-87,92,97,101-111,117-120,129-130,132,134,141-145,147-148,152-156,158-159,163-170,243-246
+  s_b1c41f53bb1c24::t_b39e6bc6b8de33 32
+  s_832c7c4f88c26b::t_7700ecabf212ed 55,178,180,184,215,222-224
+  s_b1c41f53bb1c24::t_148ac295882a66 151
+  s_b1c41f53bb1c24::t_75ca523b4a1cb3 65,239-240
+  s_b1c41f53bb1c24::t_884a56d80a0015 89,157
+  s_832c7c4f88c26b::t_1196d6242683bb 185,197-199
+  s_832c7c4f88c26b::t_d5f4b810eebb65 52,174-175,183,190
+  s_b1c41f53bb1c24::t_4c5da0666f8c00 160,162
+  s_b1c41f53bb1c24::t_ec280c106a12fa 7,46-50,60,99,121-126,128,131,139,146
+  s_832c7c4f88c26b::t_af38cf6c4e758b 9,81,84,135-138,140
+.github/workflows/deploy.yml
+  s_b1c41f53bb1c24::t_0bed0fe50dd0d4 5,7,13-15,17,24-28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "01979490295060adc730281a8b0cfb1ff37e79db",
+  "prompts": {},
+  "sessions": {
+    "s_832c7c4f88c26b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "21f4c2f6-10d6-4e4c-b89a-09d2767a63b3",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Yash Savalia <yashsavalia1@gmail.com>"
+    },
+    "s_b1c41f53bb1c24": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d046f3d2-1229-4221-8b73-1a1ec96129a4",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Yash Savalia <yashsavalia1@gmail.com>"
+    }
+  }
+}
