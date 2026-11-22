@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yash Savalia</title>
+<meta name="description" content="Yash Savalia is a founding engineer at Bluejay in San Francisco, working on evals and research for voice AI.">
+<meta property="og:title" content="Yash Savalia">
+<meta property="og:description" content="Engineer in San Francisco. Evals and research for voice AI at Bluejay.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M8 1v5M8 10v5M1 8h5M10 8h5' stroke='%23c2371a' stroke-width='1.5'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Xanh+Mono:ital@0;1&display=swap">
+<script>
+try{if(localStorage.light)document.documentElement.dataset.light=localStorage.light}catch(e){}
+</script>
+<style>
+/* Day: pale plate, dark ink. Night: observatory red light. */
+:root{--plate:#e9e6df;--ink:#16150f;--dim:#5e5a50;--rule:#c9c5b9;--mark:#b8321a}
+@media (prefers-color-scheme:dark){:root:not([data-light=white]){--plate:#070303;--ink:#ff6a57;--dim:#d14e40;--rule:#3a1210;--mark:#ffb4a8}}
+:root[data-light=red]{--plate:#070303;--ink:#ff6a57;--dim:#d14e40;--rule:#3a1210;--mark:#ffb4a8}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+/* Instrument Serif ships one weight, so emphasis is size, italic and colour, never bold */
+body{background:var(--plate);color:var(--ink);font:400 21px/1.4 "Instrument Serif",Georgia,serif;-webkit-font-smoothing:antialiased}
+b,h1,h2{font-weight:400}
+::selection{background:var(--mark);color:var(--plate)}
+.wrap{max-width:60rem;margin:0 auto;padding:0 1.25rem 5rem}
+a{color:inherit;text-decoration:underline;text-decoration-color:var(--mark);text-decoration-thickness:1px;text-underline-offset:.2em}
+a,#lamp{transition:color .2s ease}
+a:hover{color:var(--mark)}
+:focus-visible{outline:1px solid var(--mark);outline-offset:3px}
+ul,ol{list-style:none}
+.mono,h2,time,.yr{font-family:"Xanh Mono",ui-monospace,Menlo,monospace;font-size:14px;line-height:1.5;letter-spacing:.01em}
+
+.top{display:flex;justify-content:space-between;gap:1rem;padding:1.25rem 0;color:var(--dim)}
+.top nav{display:flex;gap:1.5rem}
+.top a{text-decoration:none}
+#lamp{font:inherit;letter-spacing:inherit;color:inherit;background:none;border:0;cursor:pointer}
+#lamp:hover{color:var(--mark)}
+#lamp::after{content:": off"}
+#lamp[aria-pressed=true]::after{content:": on"}
+
+.intro{padding:4rem 0 3.5rem;font-size:1.15em;max-width:31rem}
+h1{font-size:1.6em;line-height:1.1;margin-bottom:1.1rem}
+.intro p{color:var(--dim)}
+.intro a{color:var(--ink)}
+.intro a:hover{color:var(--mark)}
+
+#glass{display:none}
+@media (min-width:1000px){
+  .intro{position:relative}
+  #glass{display:block;position:absolute;left:calc(100% + 1.5rem);top:calc(50% - 12.5rem);width:25rem;height:25rem;filter:drop-shadow(0 1.2rem 1.6rem rgba(0,0,0,.14))}
+}
+
+/* each piece comes into focus on load */
+@keyframes focus{from{opacity:0;filter:blur(10px);transform:translateY(.15em)}}
+.intro>*{animation:focus .8s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i)*90ms)}
+.top,section{animation:focus .9s cubic-bezier(.2,.7,.2,1) both}
+section{animation-delay:.65s}
+section+section{animation-delay:.75s}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.2s}
+@media (prefers-reduced-motion:reduce){.intro>*,.top,section{animation:none}::view-transition-old(root),::view-transition-new(root){animation:none}}
+
+section{display:grid;grid-template-columns:9rem 1fr;gap:0 2rem;padding:2.75rem 0;border-top:1px solid var(--rule)}
+h2{color:var(--dim);text-transform:uppercase;padding-top:.45rem}
+section>div>p{max-width:32rem}
+p+p{margin-top:.8rem}
+.cap{font-size:.9rem;font-style:italic;color:var(--dim)}
+
+/* booktabs: heavy rule top and bottom, light rules between */
+.tbl{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);margin-top:.6rem}
+.tbl li{position:relative;display:grid;gap:.1rem 1.25rem;padding:.7rem 0}
+.tbl li+li{border-top:1px solid var(--rule)}
+.tbl li::before{content:"+";position:absolute;left:-1.05rem;top:.9rem;font:14px "Xanh Mono",monospace;color:var(--mark);opacity:0;transition:opacity .12s}
+.tbl li:hover::before{opacity:1}
+.tbl b{font-size:1.12em}
+.tbl p{max-width:30rem}
+.built li{grid-template-columns:9rem 1fr 6rem}
+.log li{grid-template-columns:11.5rem 1fr}
+.yr,time{color:var(--dim);padding-top:.4rem}
+.yr{text-align:right;white-space:nowrap}
+.role{color:var(--dim);font-style:italic}
+
+.methods{counter-reset:m}
+.methods li{counter-increment:m;display:grid;grid-template-columns:2.5rem 1fr;padding:.45rem 0}
+.methods li::before{content:"P" counter(m);font:14px "Xanh Mono",monospace;color:var(--dim);padding-top:.7rem}
+.methods b{font-size:1.55rem;line-height:1.2;display:block}
+.methods span{display:block;color:var(--dim);line-height:1.35}
+
+@media (max-width:820px){
+  section{display:block}
+  h2{padding:0 0 1rem}
+}
+@media (max-width:640px){
+  body{font-size:20px}
+  .intro{padding:2.75rem 0 2.5rem}
+  section{padding:2.25rem 0}
+  .built li{grid-template-columns:1fr auto}
+  .built p{grid-column:1/-1;grid-row:2}
+  .log li{grid-template-columns:1fr}
+  time{padding:0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top mono">
+  <nav>
+    <a href="mailto:yashsavalia1@gmail.com">email</a>
+    <a href="https://github.com/yashsavalia1">github</a>
+    <a href="https://linkedin.com/in/yash-savalia">linkedin</a>
+  </nav>
+  <button id="lamp" type="button" aria-pressed="false" title="Observatories work under red light at night. It keeps your eyes adapted to the dark.">red light</button>
+</header>
+
+<main>
+<div class="intro">
+  <h1 style="--i:0">Yash Savalia</h1>
+  <p style="--i:1">I'm a founding engineer at <a href="https://getbluejay.ai">Bluejay</a> in San Francisco, where I work on evals and research for voice AI.</p>
+  <p style="--i:2">Lately that means benchmarks: <a href="https://research.getbluejay.ai/benchmarks/mivas">MIVAS</a> for speech-to-speech models, <a href="https://research.getbluejay.ai/benchmarks/mistt">MISTT</a> for speech-to-text, and <a href="https://research.getbluejay.ai/benchmarks/callm">CALLM</a> for the LLMs behind phone agents.</p>
+  <p style="--i:3">Before Bluejay I studied physics, computer science and astronomy at Illinois.</p>
+  <p style="--i:4">Outside of work I'm learning Japanese and building small tools for myself.</p>
+  <canvas id="glass" style="--i:6" aria-hidden="true"></canvas>
+</div>
+
+<section>
+  <h2>§1 Work</h2>
+  <div>
+    <p class="cap">Table 1. Things I have built.</p>
+    <ul class="tbl built">
+      <li><b><a href="https://getbluejay.ai">Bluejay</a></b><p>Testing and observability for voice and chat agents. Simulated callers before launch, evals on live calls after.</p><span class="yr">2025 → now</span></li>
+      <li><b><a href="https://research.getbluejay.ai/benchmarks/mivas">MIVAS Bench</a></b><p>Benchmark for speech-to-speech models on multi-agent phone calls in healthcare, legal and customer support. With Faraz Siddiqi.</p><span class="yr">2026</span></li>
+      <li><b><a href="https://research.getbluejay.ai/benchmarks/mistt">MISTT Bench</a></b><p>Benchmark for speech-to-text models: accuracy, latency, price, and how they hold up on bad phone lines.</p><span class="yr">2026</span></li>
+      <li><b><a href="https://research.getbluejay.ai/benchmarks/callm">CALLM Bench</a></b><p>Benchmark for the LLMs behind phone agents, run over a simulated phone line.</p><span class="yr">2026</span></li>
+      <li><b><a href="https://github.com/yashsavalia1/kotoba">kotoba</a></b><p>Video player with a hover dictionary and Anki card mining, for learning Japanese from your own media.</p><span class="yr">2026</span></li>
+      <li><b><a href="https://github.com/yashsavalia1/aws-pcap">CloudPCap</a></b><p>Packet capture for measuring the latency of trading bots on AWS. With Areet Sheth.</p><span class="yr">2024</span></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>§2 Log</h2>
+  <div>
+    <ol class="tbl log">
+      <li><time>2025-06 → now</time><div><b>Bluejay</b> <span class="role">Founding AI engineer, San Francisco</span><p>Voice AI evals and research.</p></div></li>
+      <li><time>2022-01 → 2023-05</time><div><b>Disruption Lab at Gies</b> <span class="role">Technical lead</span><p>Risk and profitability models for an auto lender.</p></div></li>
+      <li><time>2021 → 2025</time><div><b>University of Illinois Urbana-Champaign</b><p>B.S. Physics; Computer Science + Astronomy.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <h2>§3 Principles</h2>
+  <ol class="methods">
+    <li><div><b>Find the cause, not the symptom.</b></div></li>
+    <li><div><b>Read it before you change it.</b></div></li>
+    <li><div><b>The best code is the code that never gets written.</b></div></li>
+    <li><div><b>Build it, then argue about it.</b></div></li>
+    <li><div><b>Short sentences.</b></div></li>
+  </ol>
+</section>
+</main>
+
+</div>
+<script>
+(()=>{
+const root=document.documentElement,lamp=document.getElementById('lamp'),dark=matchMedia('(prefers-color-scheme:dark)'),
+  night=()=>root.dataset.light?root.dataset.light==='red':dark.matches;
+
+// Glass drops, raymarched in one fragment shader. They refract a field of moving
+// stripes that is drawn nowhere else, one index of refraction per colour.
+const cv=document.getElementById('glass'),gl=cv.getContext('webgl',{premultipliedAlpha:true}),
+  still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+let U,on=false;
+const FS=`precision highp float;
+uniform vec2 R;uniform float T;uniform vec3 C[3],INK,BASE,HI;
+float smin(float a,float b,float k){float h=clamp(.5+.5*(b-a)/k,0.,1.);return mix(b,a,h)-k*h*(1.-h);}
+float map(vec3 p){
+  float d=smin(length(p-C[0])-.34,length(p-C[1])-.3,.32);
+  return smin(d,length(p-C[2])-.26,.32);}
+float bands(vec2 u){return smoothstep(-.1,.1,sin(u.y*9.+sin(u.x*3.+T*.45)*1.8+T*.3)-.15);}
+void main(){
+  vec2 uv=(gl_FragCoord.xy*2.-R)/R.y;
+  vec3 ro=vec3(uv*1.3,3.),rd=vec3(0.,0.,-1.);
+  float t=0.,d=1.;
+  for(int i=0;i<64;i++){d=map(ro+rd*t);if(d<.001||t>6.)break;t+=d;}
+  if(d>=.001){gl_FragColor=vec4(0.);return;}
+  vec3 p=ro+rd*t;vec2 e=vec2(.002,0.);
+  vec3 n=normalize(vec3(map(p+e.xyy)-map(p-e.xyy),map(p+e.yxy)-map(p-e.yxy),map(p+e.yyx)-map(p-e.yyx)));
+  float nv=max(dot(n,-rd),0.);
+  vec3 c=vec3(0.);
+  for(int i=0;i<8;i++){float s=float(i)/8.*.08;
+    c.r+=bands(p.xy+refract(rd,n,1./(1.12+s)).xy*1.5);
+    c.g+=bands(p.xy+refract(rd,n,1./(1.17+s*2.)).xy*1.5);
+    c.b+=bands(p.xy+refract(rd,n,1./(1.23+s*3.)).xy*1.5);}
+  vec3 col=mix(BASE,INK,c/8.);
+  vec3 l=normalize(vec3(-.5,.8,.6));
+  col*=.92+.08*dot(n,l);
+  col=mix(col,HI,pow(1.-nv,3.)*.6)+HI*pow(max(dot(reflect(-l,n),-rd),0.),50.)*.9;
+  float a=smoothstep(0.,.16,nv);
+  gl_FragColor=vec4(min(col,1.)*a,a);}`;
+function setup(){
+  if(!gl)return false;
+  const sh=(type,src)=>{const o=gl.createShader(type);gl.shaderSource(o,src);gl.compileShader(o);return o},pr=gl.createProgram();
+  gl.attachShader(pr,sh(gl.VERTEX_SHADER,'attribute vec2 a;void main(){gl_Position=vec4(a,0.,1.);}'));
+  gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,FS));gl.linkProgram(pr);
+  if(!gl.getProgramParameter(pr,gl.LINK_STATUS))return false;
+  gl.useProgram(pr);gl.bindBuffer(gl.ARRAY_BUFFER,gl.createBuffer());
+  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+  gl.enableVertexAttribArray(0);gl.vertexAttribPointer(0,2,gl.FLOAT,false,0,0);
+  U={};for(const k of['R','T','C','INK','BASE','HI'])U[k]=gl.getUniformLocation(pr,k);
+  return true;
+}
+function draw(ms){
+  const w=Math.round(cv.clientWidth*Math.min(devicePixelRatio,2));
+  if(!w)return;
+  if(cv.width!==w){cv.width=cv.height=w;gl.viewport(0,0,w,w)}
+  const t=still?4:ms/1e3;
+  gl.uniform2f(U.R,w,w);gl.uniform1f(U.T,t);
+  gl.uniform3fv(U.C,[Math.sin(t*.5)*.62,Math.cos(t*.4)*.5,Math.sin(t*.3)*.25, Math.cos(t*.35)*.6,Math.sin(t*.55)*.55,Math.cos(t*.45)*.25, Math.sin(t*.3+2)*.55,Math.cos(t*.5+1)*.6,0]);
+  gl.drawArrays(gl.TRIANGLES,0,3);
+}
+function tint(){
+  const st=getComputedStyle(root),hex=k=>{const v=st.getPropertyValue(k).trim();return[1,3,5].map(i=>parseInt(v.substr(i,2),16)/255)},n=night();
+  gl.uniform3fv(U.INK,hex('--ink'));gl.uniform3fv(U.BASE,n?[.1,.03,.03]:[.97,.96,.93]);gl.uniform3fv(U.HI,n?hex('--mark'):[1,1,1]);
+  draw(performance.now());
+}
+const loop=ms=>{if(!on)return;draw(ms);if(!still)requestAnimationFrame(loop)};
+const glass=setup();
+if(glass){
+  new IntersectionObserver(([e])=>{if(e.isIntersecting&&!on){on=true;requestAnimationFrame(loop)}else if(!e.isIntersecting)on=false}).observe(cv);
+}else cv.remove();
+
+const sync=()=>{lamp.setAttribute('aria-pressed',night());if(glass)tint()};
+const flip=()=>{root.dataset.light=night()?'white':'red';try{localStorage.light=root.dataset.light}catch(e){}sync()};
+// native cross-fade of the whole page where the browser has it; instant switch elsewhere
+lamp.onclick=()=>document.startViewTransition?document.startViewTransition(flip).ready.catch(()=>{}):flip();
+dark.addEventListener('change',sync);sync();
+})();
+</script>
+</body>
+</html>
