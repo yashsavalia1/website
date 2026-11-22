@@ -1,0 +1,19 @@
+.github/workflows/deploy.yml
+  s_832c7c4f88c26b::t_4e9776e17a3798 24,26,28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "bb74c6e185d55340ce5e0185bb3aa9909166f17a",
+  "prompts": {},
+  "sessions": {
+    "s_832c7c4f88c26b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "21f4c2f6-10d6-4e4c-b89a-09d2767a63b3",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Yash Savalia <yashsavalia1@gmail.com>"
+    }
+  }
+}
