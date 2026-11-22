@@ -1,0 +1,21 @@
+index.html
+  s_832c7c4f88c26b::t_5d1ea97910ec69 11
+.github/workflows/deploy.yml
+  s_832c7c4f88c26b::t_5d1ea97910ec69 25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f19db7b3e30c6e91a716e52ceb377cc35631226a",
+  "prompts": {},
+  "sessions": {
+    "s_832c7c4f88c26b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "21f4c2f6-10d6-4e4c-b89a-09d2767a63b3",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": null
+    }
+  }
+}
